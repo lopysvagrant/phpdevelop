@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "lopydebian/jessie64"
+  config.vm.box = "lopysvagrant/debianjessie64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -70,17 +70,9 @@ Vagrant.configure("2") do |config|
 	chown -R vagrant:vagrant .
 
 
-	# apt source 
-    echo "deb http://mirrors.aliyun.com/debian jessie main non-free contrib" > /etc/apt/sources.list
-    echo "deb-src http://mirrors.aliyun.com/debian jessie main non-free contrib" >> /etc/apt/sources.list
-    echo "deb http://mirrors.aliyun.com/debian jessie-updates main non-free contrib" >> /etc/apt/sources.list
-    echo "deb-src http://mirrors.aliyun.com/debian jessie-updates main non-free contrib" >> /etc/apt/sources.list
-
 	# apt install
 	echo "install php......................................................................................"
     apt-get update
-	apt-get upgrade -y
-	apt-get dist-upgrade -y
   	apt-get install -y nginx php5-fpm php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap \
 			php5-mcrypt php5-common php5-mysql php5-pspell php5-recode php5-dev php5-sqlite \
 			php5-tidy php5-xmlrpc php5-xsl php5-memcached git curl vim apt-transport-https ca-certificates  \
